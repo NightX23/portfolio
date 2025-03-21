@@ -1,68 +1,109 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  img {
+    @apply min-h-[256px]
+    min-w-[256px]
+    mx-auto;
   }
-  a:hover {
-    color: #747bff;
+
+  section {
+    @apply flex
+    mx-auto
+    relative
+    w-auto
+    h-fit
+    pb-12
+        
+    md:h-screen
+    md:w-full;
   }
-  button {
-    background-color: #f9f9f9;
+  h1 {
+    @apply text-center
+    md:text-left;
+  }
+}
+
+@layer components {
+  #navbar {
+    @apply bg-white 
+    flex 
+    items-center 
+    py-6 
+    pl-12 
+    pr-10 
+    justify-between 
+    h-auto 
+    w-full 
+    text-lg 
+    z-10 
+    shadow 
+    fixed 
+    top-0 
+    left-0
+    font-semibold;
+  }
+  .menu-list {
+    @apply hidden
+    gap-8
+    list-none
+    md:flex;
+  }
+  /* ---------HOME SECTION STYLES --------------- */
+  .profile-main {
+    @apply flex
+    flex-col
+    justify-center
+    items-center
+    relative
+    
+    md:flex-row-reverse
+    md:gap-[10rem];
+  }
+  .skill-div {
+    @apply flex
+    flex-col
+    gap-9
+    text-[1.7rem]
+    items-center
+    justify-center
+    /* max-w-2xl */
+    text-center
+    
+    md:flex-row
+    md:text-left
+    md:absolute
+    md:left-0
+    /* md:bottom-0; */;
+  }
+
+  .skills-text {
+    @apply font-semibold
+    border-b-2
+    
+    md:border-b-0
+    md:border-r-2
+    md:mt-2
+    md:pr-8;
+  }
+
+  .skill {
+    @apply bg-gray-200
+    content-center
+    justify-center
+    max-w-fit
+    p-5
+    rounded-full
+    cursor-pointer;
+  }
+
+  .skills-list {
+    @apply flex
+    flex-wrap
+    /* mt-8 */
+    justify-center
+    items-center
+    gap-9
+    list-none;
   }
 }

@@ -13,7 +13,7 @@ function Home() {
   return (
     <section id='home' className=''>
       <div className='flex container justify-center items-center content-center px-0 mt-20 my-0 py-0  max-w-[107rem] relative mx-auto'>
-        <div className='mt-24 relative mx-0'>
+        <div className='relative mx-0'>
           <div id='profile-main' className='profile-main'>
             <img src={profile} alt='' width='384' height='384' />
             <div

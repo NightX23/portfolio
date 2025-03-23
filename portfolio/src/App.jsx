@@ -1,9 +1,10 @@
 import './App.css';
-import Menu from './components/Menu';
+import Menu from './components/Menu/Menu';
 import Home from './components/Home';
 import About from './components/About';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import ToggleMenu from './components/Menu/ToggleMenu';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
         <a className='brand' href='/'>
           Marlon.dev
         </a>
-        <div className=''>
+        <div>
           <Menu />
         </div>
+        <ToggleMenu />
       </nav>
       <Home />
       <About />

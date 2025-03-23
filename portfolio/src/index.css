@@ -55,6 +55,16 @@
     pr-10 z-10 shadow text-lg font-semibold;
   }
 
+  .dropdown {
+    @apply md:hidden;
+  }
+
+  .dropdown .menu-list {
+    @apply block
+    gap-8
+    md:hidden;
+  }
+
   .menu-list {
     @apply hidden gap-8 list-none
       md:flex;

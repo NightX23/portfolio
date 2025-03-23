@@ -6,21 +6,13 @@
     @apply scroll-smooth;
   }
   img {
-    @apply min-h-[256px]
-    min-w-[256px]
-    mx-auto;
+    @apply min-h-[256px] min-w-[256px] mx-auto;
   }
 
   section {
-    @apply flex
-    mx-auto
-    relative
-    w-auto
-    h-fit
-    pb-12
-        
-    md:h-screen
-    md:w-full;
+    @apply flex mx-auto relative w-auto h-fit
+    pb-12 
+      md:h-screen md:w-full;
   }
   section:nth-of-type(odd) {
     @apply bg-gray-100;
@@ -32,176 +24,104 @@
 
   h1 {
     @apply text-center
-    md:text-left;
+      md:text-left;
   }
 
   p {
-    @apply text-center
-    leading-relaxed
-    md:text-justify;
-  }
-  h3.text-style {
-    @apply text-blue-500
-    text-center
-    uppercase
-    text-2xl
-    mb-2
-    font-bold
-    md:text-left;
-  }
-
-  h4.text-style {
-    @apply text-gray-900
-    text-center
-    text-xl
-    mb-1
-    font-semibold
-    md:text-left;
+    @apply text-center leading-relaxed
+      md:text-justify;
   }
 
   footer {
-    @apply bg-gray-800
-    items-center
-    justify-center
-    py-7
-    flex-col
+    @apply bg-gray-800 items-center justify-center py-7 flex-col
     pt-5;
   }
 }
 
 @layer components {
+  .section-container {
+    @apply flex container mx-auto mt-20 px-0 
+    justify-center items-center content-center;
+  }
+
+  /*--------- NAVBAR ------------*/
   .brand {
-    @apply font-bold
-    text-xl;
+    @apply font-bold text-xl;
   }
 
   #navbar {
-    @apply bg-white 
-    flex 
-    items-center 
-    py-6 
-    pl-12 
-    pr-10 
-    justify-between 
-    h-auto 
-    w-full 
-    text-lg 
-    z-10 
-    shadow 
-    fixed 
-    top-0 
-    left-0
-    font-semibold;
+    @apply bg-white fixed top-0 left-0 flex 
+    items-center justify-between w-full py-6 pl-12
+    pr-10 z-10 shadow text-lg font-semibold;
   }
+
   .menu-list {
-    @apply hidden
-    gap-8
-    list-none
-    md:flex;
+    @apply hidden gap-8 list-none
+      md:flex;
   }
 
   /* ---------HOME SECTION STYLES --------------- */
   .profile-main {
-    @apply flex
-    flex-col
-    justify-center
-    items-center
-    relative
-    
-    md:flex-row-reverse
-    md:gap-[10rem];
+    @apply flex flex-col justify-center items-center relative
+      md:flex-row-reverse md:gap-[10rem];
   }
+
   .skill-div {
-    @apply flex
-    flex-col
-    gap-9
-    text-[1.7rem]
-    items-center
-    justify-center
-    /* max-w-2xl */
-    text-center
-    
-    md:flex-row
-    md:text-left
-    md:absolute
-    md:left-0
-    /* md:bottom-0; */;
+    @apply flex flex-col gap-9 text-[1.7rem] items-center
+    justify-center text-center
+      md:flex-row md:text-left md:absolute md:left-0;
   }
 
   .skills-text {
-    @apply font-semibold
-    border-b-2
-    
-    md:border-b-0
-    md:border-r-2
-    md:mt-2
-    md:pr-8;
+    @apply font-semibold border-b-2
+      md:border-b-0 md:border-r-2 md:mt-2 md:pr-8;
   }
 
   .skill {
-    @apply bg-gray-200
-    content-center
-    justify-center
-    max-w-fit
-    p-5
-    rounded-full
-    cursor-pointer;
+    @apply bg-gray-200 content-center justify-center max-w-fit p-5
+    rounded-full cursor-pointer;
   }
 
   .skills-list {
-    @apply flex
-    flex-wrap
-    /* mt-8 */
-    justify-center
-    items-center
-    gap-9
+    @apply flex flex-wrap justify-center items-center gap-9
     list-none;
   }
   /*---------- ABOUT SECTION STYLES -------------------------------------------------------------*/
 
   .about-content {
-    @apply justify-center
-      text-center
-      items-center
-      
-      md:grid
-      md:grid-cols-2
-      md:px-20;
+    @apply justify-center text-center items-center
+      md:grid md:grid-cols-2 md:px-20;
   }
 
   /*---------- CONTACT SECTION STYLES -------------------------------------------------------------*/
-  .contact-main-container {
-    @apply container justify-center items-center content-center px-0 mt-20 mx-auto
-    flex
-    flex-col
-    sm:flex-col;
-  }
   .contact-elements-container {
-    @apply flex
-    /* flex-col */
-    gap-11
-    mt-3
-    content-center 
-    justify-center
+    @apply flex mt-3 gap-11 content-center justify-center
     items-center;
   }
+
   .contact-info {
-    @apply flex
-  flex-col
-  gap-2;
+    @apply flex flex-col gap-2;
   }
   .contact-info h3 {
-    @apply text-gray-950
-  text-lg
-  font-bold;
+    @apply text-gray-950 text-lg font-bold;
   }
   .contact-info a {
-    @apply text-gray-500
-    text-lg;
+    @apply text-gray-500 text-lg;
   }
   .contact-icon-box {
-    @apply flex
-    items-center
-    gap-6;
+    @apply flex gap-6 items-center;
+  }
+
+  /* --------- -----------*/
+
+  .section-title {
+    @apply mb-2 text-blue-500 text-center text-2xl uppercase
+  font-bold
+    md:text-left;
+  }
+
+  .section-subtitle {
+    @apply mb-1 text-gray-900 text-center text-xl font-semibold
+    md:text-left;
   }
 }

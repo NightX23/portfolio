@@ -11,16 +11,16 @@ import profile from '../images/profile1.png';
 
 function Home() {
   return (
-    <section id='home' className=''>
-      <div className='flex container justify-center items-center content-center px-0 mt-20 my-0 py-0  max-w-[107rem] relative mx-auto'>
-        <div className='relative mx-0'>
+    <section id='home'>
+      <div className='section-container max-w-[107rem] relative'>
+        <div className='relative'>
           <div id='profile-main' className='profile-main'>
-            <img src={profile} alt='' width='384' height='384' />
+            <img src={profile} alt='Profile picture' width='384' height='384' />
             <div
               id='profile-info'
-              className='flex flex-col basis-1/2 max-w-3xl '
+              className='flex flex-col max-w-3xl basis-1/2  '
             >
-              <h1 className='text-black-500 text-7xl font-bold my-8'>
+              <h1 className='my-8 text-7xl font-bold'>
                 Full-Stack Web Developer
               </h1>
               <p className='block text-[1.8rem] leading-relaxed'>

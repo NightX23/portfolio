@@ -4,7 +4,7 @@ import { AiOutlineLinkedin, AiFillGithub } from 'react-icons/ai';
 function Footer() {
   return (
     <footer>
-      <div className='text-center justify-center items-center'>
+      <div className='text-center'>
         <div className=''>
           <h3 className=' text-white'>
             Copyright &copy; 2025. All right reserved

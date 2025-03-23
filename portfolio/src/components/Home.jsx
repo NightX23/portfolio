@@ -6,8 +6,8 @@ import {
   SiCss3,
 } from 'react-icons/si';
 import { DiVisualstudio } from 'react-icons/di';
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import profile from '../images/profile1.png';
+import SocialLinks from './Social/SocialLinks';
 
 function Home() {
   return (
@@ -27,27 +27,9 @@ function Home() {
                 Hi, I'm Marlon Peña. A passionate Web Developer based in Santo
                 Domingo, Dominican Republic. 📍
               </p>
-              <span className='flex gap-5 my-10 cursor-pointer justify-center md:justify-start'>
-                <a
-                  className='text-5xl'
-                  aria-label='linkedin'
-                  rel='noreferrer'
-                  target='_blank'
-                  href='https://www.linkedin.com/in/marlon-pena/'
-                >
-                  {' '}
-                  <AiFillLinkedin />{' '}
-                </a>
-                <a
-                  className='text-5xl'
-                  aria-label='github'
-                  rel='noreferrer'
-                  target='_blank'
-                  href='https://github.com/NightX23'
-                >
-                  <AiFillGithub />
-                </a>
-              </span>
+              <div className='my-10'>
+                <SocialLinks alignment='  justify-start' />
+              </div>
             </div>
           </div>
 

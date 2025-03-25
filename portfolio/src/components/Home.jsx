@@ -28,7 +28,7 @@ function Home() {
                 Domingo, Dominican Republic. 📍
               </p>
               <div className='my-10'>
-                <SocialLinks alignment='  justify-start' />
+                <SocialLinks alignment='justify-center md:justify-start' />
               </div>
             </div>
           </div>

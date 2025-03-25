@@ -105,8 +105,10 @@
 
   /*---------- CONTACT SECTION STYLES -------------------------------------------------------------*/
   .contact-elements-container {
-    @apply flex mt-3 gap-11 content-center justify-center
-    items-center;
+    @apply flex flex-col mt-3 content-center justify-center
+    items-center
+
+    md:flex-row gap-11;
   }
 
   .contact-info {

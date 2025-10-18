@@ -9,7 +9,7 @@ import { DiVisualstudio } from 'react-icons/di';
 import profile from '../images/profile1.png';
 import SocialLinks from './Social/SocialLinks';
 
-function Home() {
+function Home({ content }) {
   return (
     <section id='home'>
       <div className='section-container max-w-[107rem] relative'>
@@ -20,12 +20,9 @@ function Home() {
               id='profile-info'
               className='flex flex-col max-w-3xl basis-1/2  '
             >
-              <h1 className='my-8 text-7xl font-bold'>
-                Full-Stack Web Developer
-              </h1>
+              <h1 className='my-8 text-7xl font-bold'>{content?.title}</h1>
               <p className='block text-[1.8rem] leading-relaxed'>
-                Hi, I'm Marlon Peña. A passionate Web Developer based in Santo
-                Domingo, Dominican Republic. 📍
+                {content?.description} 📍
               </p>
               <div className='my-10'>
                 <SocialLinks alignment='justify-center md:justify-start' />
@@ -34,7 +31,7 @@ function Home() {
           </div>
 
           <div id='skills' className='skill-div'>
-            <p className='skills-text'>Tech Stack</p>
+            <p className='skills-text'>{content?.subtitle}</p>
             <div id='logos'>
               <ul className='skills-list'>
                 <li className='skill'>

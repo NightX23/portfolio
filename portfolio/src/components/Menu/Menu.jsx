@@ -1,23 +1,25 @@
 import React from 'react';
 
-function Menu() {
+function Menu({menuOptions}) {
+
+  const { home, about, projects, contact } = menuOptions;
   return (
     <ul className='menu-list'>
       <li>
         {' '}
-        <a href='#home'>Home</a>
+        <a href='#home'>{home}</a>
       </li>
       <li>
         {' '}
-        <a href='#about'>About</a>
+        <a href='#about'>{about}</a>
       </li>
       {/* <li>
         {' '}
-        <a href='#projects'>Projects</a>
+        <a href='#projects'>{projects}</a>
       </li> */}
       <li>
         {' '}
-        <a href='#contact'>Contact</a>
+        <a href='#contact'>{contact}</a>
       </li>
     </ul>
   );

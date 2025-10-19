@@ -12,7 +12,7 @@ function App() {
   const sectionsText = sectionsInfo.en;
 
   if (_loading) return <div className='loading'>Loading...</div>;
-  
+
   return (
     <>
       <nav id='navbar'>
@@ -22,7 +22,7 @@ function App() {
         <div>
           <Menu menuOptions={sectionsText.menu} />
         </div>
-        <ToggleMenu />
+        <ToggleMenu menuOptions={sectionsText.menu} />
       </nav>
       <Home content={sectionsText.main} />
       <About content={sectionsText.about} />

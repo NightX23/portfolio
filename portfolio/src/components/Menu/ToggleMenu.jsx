@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Menu from './Menu';
 
-function ToggleMenu() {
+function ToggleMenu({ menuOptions }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,7 +14,7 @@ function ToggleMenu() {
       <AiOutlineMenu onClick={toggleDropdown}>
         {isOpen ? 'Close' : 'Open'} Menu
       </AiOutlineMenu>
-      {isOpen && <Menu />}
+      {isOpen && <Menu menuOptions={menuOptions} />}
     </div>
   );
 }

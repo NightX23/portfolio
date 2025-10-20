@@ -6,7 +6,7 @@ import {
   SiCss3,
 } from 'react-icons/si';
 import { DiVisualstudio } from 'react-icons/di';
-import profile from '../images/profile1.png';
+import { images } from '../images/imageIndex.js';
 import SocialLinks from './Social/SocialLinks';
 
 function Home({ content }) {
@@ -15,7 +15,18 @@ function Home({ content }) {
       <div className='section-container max-w-[107rem] relative'>
         <div className='relative'>
           <div id='profile-main' className='profile-main'>
-            <img src={profile} alt='Profile picture' width='384' height='384' />
+            <picture>
+              <source srcSet={images.profile.avif} type='image/avif' />
+              <source srcSet={images.profile.webp} type='image/avif' />
+              <img
+                src={images.profile.png}
+                alt='Profile picture'
+                width='384'
+                height='384'
+                loading='eager'
+                fetchPriority='high'
+              />
+            </picture>
             <div
               id='profile-info'
               className='flex flex-col max-w-3xl basis-1/2  '

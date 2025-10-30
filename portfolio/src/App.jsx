@@ -2,8 +2,9 @@ import './App.css';
 import Menu from './components/Menu/Menu';
 import Home from './components/Home';
 import About from './components/About';
-import Footer from './components/Footer';
+import Experience from './components/Experience';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import ToggleMenu from './components/Menu/ToggleMenu';
 import { useFirebaseData } from './hooks/FirebaseDataHooks';
 
@@ -26,6 +27,7 @@ function App() {
       </nav>
       <Home content={sectionsText.main} />
       <About content={sectionsText.about} />
+      <Experience content={sectionsText.experience} />
       <Contact content={sectionsText.contact} />
       <Footer />
     </>

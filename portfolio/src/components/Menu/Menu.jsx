@@ -1,8 +1,7 @@
 import React from 'react';
 
-function Menu({menuOptions}) {
-
-  const { home, about, projects, contact } = menuOptions;
+function Menu({ menuOptions }) {
+  const { home, about, experience, projects, contact } = menuOptions;
   return (
     <ul className='menu-list'>
       <li>
@@ -12,6 +11,9 @@ function Menu({menuOptions}) {
       <li>
         {' '}
         <a href='#about'>{about}</a>
+      </li>
+      <li>
+        <a href='#experience'>{experience}</a>
       </li>
       {/* <li>
         {' '}

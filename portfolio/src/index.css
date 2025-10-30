@@ -70,6 +70,16 @@
       md:flex;
   }
 
+  .section-title {
+    @apply mb-2 text-blue-500 text-center text-2xl uppercase
+  font-bold
+    md:text-left;
+  }
+
+  .section-subtitle {
+    @apply mb-1 text-gray-900 text-center text-xl font-semibold
+    md:text-left;
+  }
   /* ---------HOME SECTION STYLES --------------- */
   .profile-main {
     @apply flex flex-col justify-center items-center relative
@@ -125,15 +135,4 @@
   }
 
   /* --------- -----------*/
-
-  .section-title {
-    @apply mb-2 text-blue-500 text-center text-2xl uppercase
-  font-bold
-    md:text-left;
-  }
-
-  .section-subtitle {
-    @apply mb-1 text-gray-900 text-center text-xl font-semibold
-    md:text-left;
-  }
 }

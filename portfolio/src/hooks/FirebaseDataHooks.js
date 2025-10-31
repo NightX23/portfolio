@@ -2,39 +2,56 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../services/firebaseService';
 
-export const useFirebaseData = () => {
-  const [sectionsInfo, setSectionsInfo] = useState([]);
+const FirebaseDataCollection = (collectionPath) => {
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const collectionRef = collection(db, 'sections_data');
-    let cancelled = false; // prevent state updates after unmount
+    if (!collectionPath) return;
+    const collectionRef = collection(db, collectionPath);
+    let cancelled = false;
 
-    const getSectionsData = async () => {
+    const fetchCollection = async () => {
       setLoading(true);
       setError(null);
       try {
         const querySnapshot = await getDocs(collectionRef);
-        const items = {};
+        let results = {};
         querySnapshot.forEach((d) => {
-          items[d.id] = d.data();
+          results[d.id] = d.data();
         });
-        if (!cancelled) setSectionsInfo(items);
+
+        if (!cancelled) {
+          setItems(results);
+        }
       } catch (err) {
-        console.error('Error fetching sections data:', err);
+        console.error('Error fetching collection:', collectionPath, err);
         if (!cancelled) setError(err);
       } finally {
         if (!cancelled) setLoading(false);
       }
     };
 
-    getSectionsData();
+    fetchCollection();
 
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [collectionPath]);
 
-  return { sectionsInfo, loading, error };
+  return { items, loading, error };
 };
+
+const useFirebase = () => {
+  return {
+    getSectionsData: FirebaseDataCollection(
+      import.meta.env.VITE_COLLECTION_SECTIONS
+    ),
+    getWorkExperienceData: FirebaseDataCollection(
+      import.meta.env.VITE_COLLECTION_WORK_EXPERIENCE
+    ),
+  };
+};
+
+export default useFirebase;

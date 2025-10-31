@@ -1,40 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ExperienceCard from './work-experience/ExperienceCard';
-
-const mockExperienceData = {
-  experience: [
-    {
-      id: 'exp_01',
-      start: '2024',
-      end: '-1',
-      position: 'Full-Stack Software Engineer',
-      company: 'XpertCode',
-      employmentType: 'Full-Time',
-      website: 'https://xpertcode.com.do',
-      workMode: 'Remote',
-      description:
-        'Contractor Software Engineer at Claro RD. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      isCurrentJob: true,
-    },
-  ],
-};
+import useFirebase from '../hooks/FirebaseDataHooks.js';
 
 function Experience({ content }) {
-  const [workExperienceList, setWorkExperienceList] = useState(
-    mockExperienceData.experience
-  );
-  // useEffect(() => {}, []);
+  const {
+    items,
+    loading: _loading,
+    error: _error,
+  } = useFirebase().getWorkExperienceData;
+
+  const experienceData = items?.en;
+
+  if (_loading) return <div className='loading'>Loading...</div>;
+
   return (
     <section id='experience'>
       <div className='section-container flex-col'>
-        <h3 className='section-title md:text-left  w-full'>{content?.title}</h3>
-        <div className='mt-4'>
-          {workExperienceList.map((workExperience) => (
-            <ExperienceCard
-              key={workExperience.id}
-              workExperience={workExperience}
-            />
-          ))}
+        <h3 className='section-title '>{content?.title}</h3>
+        <div className='mt-4 '>
+          {experienceData ? (
+            Object.values(experienceData).map((workExperience) => (
+              <ExperienceCard
+                key={workExperience.id}
+                workExperience={workExperience}
+              />
+            ))
+          ) : (
+            <div className='text-sm text-gray-500'>Loading...</div>
+          )}
         </div>
       </div>
     </section>

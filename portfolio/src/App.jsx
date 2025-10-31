@@ -6,11 +6,12 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ToggleMenu from './components/Menu/ToggleMenu';
-import { useFirebaseData } from './hooks/FirebaseDataHooks';
+import useFirebase from './hooks/FirebaseDataHooks';
 
 function App() {
-  const { sectionsInfo, loading: _loading, error: _error } = useFirebaseData();
-  const sectionsText = sectionsInfo.en;
+  const { items, loading: _loading } = useFirebase().getSectionsData;
+
+  const sectionsText = items.en;
 
   if (_loading) return <div className='loading'>Loading...</div>;
 
